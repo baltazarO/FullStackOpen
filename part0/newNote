@@ -1,0 +1,14 @@
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+server-->browser: 302 new location /exampleapp/notes
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server-->browser: 304 you already have notes page in your cache render it
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: 304 you already have js file in your cache
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: 200 json data
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/favicon
+server-->browser: 200 favicon
